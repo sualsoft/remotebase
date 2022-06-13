@@ -1,0 +1,311 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  --main-color: #fa5024;
+  --secondary-color: #666c70;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100vh;
+}
+
+#hero .logo img {
+  width: 200px;
+}
+
+#hero h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+#hero h1 span {
+  color: var(--main-color);
+}
+
+#hero p {
+  color: var(--secondary-color);
+}
+@media (max-width: 768px) {
+  #hero {
+    text-align: center;
+  }
+  #hero h1 {
+    font-size: 28px;
+  }
+}
+@media (max-height: 500px) {
+  #hero {
+    height: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+  position: relative;
+}
+.section-title h2 {
+  color: var(--secondary-color);
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.section-title p::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 150px;
+  height: 3px;
+  background: var(--main-color);
+  bottom: 0;
+  left: calc(50% - 50px);
+}
+.section-title p {
+  margin-bottom: 0;
+  color: var(--secondary-color);
+}
+
+.section-bg {
+  padding: 120px 0;
+  background-color: #ececec;
+}
+
+/*--------------------------------------------------------------
+# Tabs
+--------------------------------------------------------------*/
+.tabs .nav-tabs {
+  border: 0;
+}
+.tabs .nav-link {
+  border: 1px solid var(--main-color);
+  padding: 15px;
+  transition: 0.3s;
+  color: var(--main-color);
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fff;
+}
+.tabs .nav-link i {
+  padding-right: 15px;
+  font-size: 48px;
+}
+.tabs .nav-link h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+.tabs .nav-link:hover {
+  color: var(--secondary-color);
+}
+.tabs .nav-link:hover {
+  border: 1px solid var(--secondary-color);
+}
+.tabs .nav-link.active {
+  background: #e03a3c;
+  color: #fff;
+  border-color: #e03a3c;
+}
+@media (max-width: 768px) {
+  .tabs .nav-link i {
+    padding: 0;
+    line-height: 1;
+    font-size: 36px;
+  }
+}
+@media (max-width: 575px) {
+  .tabs .nav-link {
+    padding: 15px;
+  }
+  .tabs .nav-link i {
+    font-size: 24px;
+  }
+}
+.tabs .tab-content {
+  margin-top: 30px;
+}
+.tabs .tab-pane h3 {
+  font-weight: 600;
+  font-size: 26px;
+}
+.tabs .tab-pane ul {
+  list-style: none;
+  padding: 0;
+}
+.tabs .tab-pane ul li {
+  padding-bottom: 10px;
+}
+.tabs .tab-pane ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #e03a3c;
+}
+.tabs .tab-pane p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# blog
+--------------------------------------------------------------*/
+.blog .blog-item {
+  margin-bottom: 30px;
+}
+.blog #blog-flters {
+  padding: 0;
+  margin: 0 auto 20px auto;
+  list-style: none;
+  text-align: center;
+}
+.blog #blog-flters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 15px 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #444444;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
+}
+.blog #blog-flters li:hover,
+.blog #blog-flters li.filter-active {
+  color: #fff;
+  background: #e03a3c;
+}
+.blog #blog-flters li:last-child {
+  margin-right: 0;
+}
+.blog .card {
+  transition: 0.3s;
+  z-index: 1;
+  background: #fff;
+  border: none;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.blog .card:hover {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.blog .card .available {
+  position: absolute;
+  color: #fff;
+  background-color: var(--main-color);
+  padding: 4px 8px;
+  border-radius: 180px;
+  right: 15px;
+  top: 15px;
+}
+
+.blog .card img {
+  transition: all ease-in-out 0.3s;
+  border-radius: 12px 12px 0px 0px;
+}
+.blog .card .card-info {
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 25px;
+}
+.blog .card .card-info h4 {
+  font-size: 20px;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+.blog .card .card-info ul {
+  margin: 0%;
+  padding: 0%;
+  list-style: none;
+}
+.blog .card .card-info li {
+  margin-bottom: 12px;
+}
+.blog .card .card-info p {
+  color: var(--secondary-color) ss;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+.blog .card .portfolio-links {
+  text-align: center;
+  z-index: 4;
+}
+.blog .card .portfolio-links a {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 5px 0 0;
+  font-size: 28px;
+  display: inline-block;
+  transition: 0.3s;
+}
+.blog .card .portfolio-links a:hover {
+  color: #fff;
+}
+.blog .card :hover::before {
+  opacity: 1;
+}
+.blog .card :hover img {
+  transform: scale(1.2);
+}
+.blog .card :hover .card-info {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  color: #fff;
+  font-size: 14px;
+  background: #111111;
+}
