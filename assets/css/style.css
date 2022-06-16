@@ -56,17 +56,18 @@ h6 {
 #hero p {
   color: var(--secondary-color);
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   #hero {
-    text-align: center;
+    padding-top: 80px;
   }
   #hero h1 {
     font-size: 28px;
   }
 }
-@media (max-height: 500px) {
+@media (min-height: 500px) {
   #hero {
     height: auto;
+    padding-top: 50px;
   }
 }
 
