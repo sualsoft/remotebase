@@ -11,7 +11,7 @@ visa_cost: Free
 eligibility: US passport holders only
 cost_of_living: $$
 wifi_speed: 15 Mbps
-tag: filter_1
+tags: filter_1
 description: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum"
 display_image: /assets/img/blog/blog-1.png
 image: /assets/img/blog/blog-1.png
