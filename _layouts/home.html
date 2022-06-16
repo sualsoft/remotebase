@@ -281,9 +281,10 @@
             <div class="col-lg-12 d-flex justify-content-center">
               <ul id="blog-flters">
                 <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-1">Lorem Ipsum</li>
-                <li data-filter=".filter-2">Lorem Ipsum</li>
-                <li data-filter=".filter-3">Lorem Ipsum</li>
+                {% for tag in site.tags %}
+                <!---->
+                <li data-filter=".{{ tag }}">{{ tag }}</li>
+                {% endfor %}
               </ul>
             </div>
           </div>
@@ -293,485 +294,47 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="col-lg-4 col-md-6 blog-item filter-1">
+            {% for post in site.posts %}
+            <div class="col-lg-4 col-md-6 blog-item {{ post.tag }}">
               <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+                {% if post.banner.enable == true %}
+                <div class="available">{{ post.banner.name }}</div>
+                {% endif %}
 
-            <div class="col-lg-4 col-md-6 blog-item filter-3">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
+                <img src="{{ post.image }}" class="img-fluid" alt="" />
                 <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
+                  <a href="{{post.url}}" class="stretched-link"
+                    ><h4>{{ post.title}}</h4></a
                   >
                   <ul>
                     <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
                       <p>
-                        <strong>Eligibility: </strong>US passport holders only
+                        <strong>Max length of stay: </strong>{{
+                        post.max_length_of_stay }}
                       </p>
                     </li>
                     <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
+                      <p><strong>Taxes: </strong> {{ post.taxes }}</p>
                     </li>
                     <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
+                      <p><strong>Visa Cost: </strong>{{post.visa_cost}}</p>
+                    </li>
+                    <li>
+                      <p><strong>Eligibility: </strong>{{post.eligibility }}</p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Cost of Living: </strong>{{post.cost_of_living}}
+                      </p>
+                    </li>
+                    <li>
+                      <p><strong>Wifi Speed: </strong> {{ post.wifi_speed }}</p>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-1">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-2">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-3">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-2">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-1">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-3">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-1">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-2">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-3">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 blog-item filter-2">
-              <div class="card">
-                <div class="available">Lorem Ipsum</div>
-                <img
-                  src="/assets/img/blog/blog-1.png"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="card-info">
-                  <a href="/" class="stretched-link"
-                    ><h4>
-                      Lorem Ipsum is simply dummy text of the printing
-                    </h4></a
-                  >
-                  <ul>
-                    <li>
-                      <p><strong>Max length of stay: </strong>3 Months</p>
-                    </li>
-                    <li>
-                      <p><strong>Taxes: </strong>No local income tax</p>
-                    </li>
-                    <li>
-                      <p><strong>Visa Cost: </strong>Free</p>
-                    </li>
-                    <li>
-                      <p>
-                        <strong>Eligibility: </strong>US passport holders only
-                      </p>
-                    </li>
-                    <li>
-                      <p><strong>Cost of Living: </strong>$340</p>
-                    </li>
-                    <li>
-                      <p><strong>Wifi Speed: </strong> 15 Mbpss</p>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
