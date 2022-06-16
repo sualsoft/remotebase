@@ -302,6 +302,25 @@ section {
 }
 
 /*--------------------------------------------------------------
+# blog page
+--------------------------------------------------------------*/
+.blog-section p,
+.blog-section h1,
+.blog-section h2,
+.blog-section h3,
+.blog-section h4,
+.blog-section h5 {
+  margin-bottom: 25px;
+}
+#blog-hero {
+  background-color: #ececec;
+}
+#blog-hero h1 {
+  color: var(--secondary-color);
+  font-size: 48px;
+  font-weight: 700;
+}
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {

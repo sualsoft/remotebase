@@ -41,16 +41,16 @@
     <!-- ======= Hero Section ======= -->
     <section id="blog-hero" class="d-flex align-items-center">
       <div class="container" data-aos="zoom-out" data-aos-delay="100">
-        <div class="row align-items-center">
-          <div class="col-lg-9">
-            <h1 class="editable">{{ post.title}}</h1>
+        <div class="row align-items-center justify-content-center">
+          <div class="col-lg-9 text-center">
+            <h1 class="editable">{{ page.title}}</h1>
             <p class="mt-4 editable">
-              {{ post.description}}
+              {{ page.description}}
               <br />
             </p>
           </div>
-          <div class="col-lg-6 editable">
-            <img src="{{post.display_image}}" alt="" class="img-fluid" />
+          <div class="col-lg-6 editable mt-5">
+            <img src="{{page.display_image}}" alt="" class="img-fluid" />
           </div>
         </div>
       </div>
@@ -59,7 +59,76 @@
 
     <main id="main">
       <!-- ======= blog Section ======= -->
+      <section class="blog-section">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title mb-5">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-9 text-start editable">{{content}}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End blog Section -->
 
+      <!-- ======= blog Section ======= -->
+      <section class="blog">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title mb-1">
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-12 text-start editable">
+                <h2>Feature Posts</h2>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="row portfolio-container"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            {% for post in site.posts limit:3 %}
+            <div class="col-lg-4 col-md-6 blog-item {{ post.tag }}">
+              <div class="card">
+                {% if post.banner.enable == true %}
+                <div class="available">{{ post.banner.name}}</div>
+                {% endif %}
+                <img src="{{post.image}}" class="img-fluid" alt="" />
+                <div class="card-info">
+                  <a href="{{ post.url }}" class="stretched-link"
+                    ><h4>{{ post.title }}</h4></a
+                  >
+                  <ul>
+                    <li>
+                      <p>
+                        <strong>Max length of stay: </strong>
+                        {{ post.max_length_of_stay }}
+                      </p>
+                    </li>
+                    <li>
+                      <p><strong>Taxes: </strong>{{post.taxes}}</p>
+                    </li>
+                    <li>
+                      <p><strong>Visa Cost: </strong>{{post.visa_cost}}</p>
+                    </li>
+                    <li>
+                      <p><strong>Eligibility: </strong>{{post.eligibility}}</p>
+                    </li>
+                    <li>
+                      <p>
+                        <strong>Cost of Living: </strong>{{post.cost_of_living}}
+                      </p>
+                    </li>
+                    <li>
+                      <p><strong>Wifi Speed: </strong> {{post.wifi_speed}}</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
       <!-- End blog Section -->
     </main>
     <!-- End #main -->
