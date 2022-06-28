@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lorem Ipsum is simply dummy text of the printing
+title: 1Lorem Ipsum is simply dummy text of the printing
 date: 2022-06-13 02:24:38
 banner:
   enable: true
